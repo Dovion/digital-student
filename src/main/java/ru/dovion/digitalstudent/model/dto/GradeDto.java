@@ -1,5 +1,6 @@
 package ru.dovion.digitalstudent.model.dto;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
@@ -16,6 +17,7 @@ public class GradeDto implements Serializable {
     private final Integer score;
 
     @NotNull(message = "Идентификатор студента не может быть пустым")
+    @Schema(defaultValue = "1")
     private final Long studentId;
 
     @NotNull(message = "Название предмета не может быть пустым")
