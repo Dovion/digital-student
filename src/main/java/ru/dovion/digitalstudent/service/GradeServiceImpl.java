@@ -38,7 +38,7 @@ public class GradeServiceImpl implements GradeService {
         var foundedStudent = studentRepository.findById(gradeDto.getStudentId())
                                               .orElseThrow(() -> new EntityNotFoundException(
                                                       "Передан неверный идентификатор студента"));
-        var grade = gradeRepository.findById(gradeDto.getStudentId())
+        var grade = gradeRepository.findById(id)
                                    .orElseThrow(
                                            () -> new EntityNotFoundException("Передан неверный идентификатор оценки"));
         grade.setScore(gradeDto.getScore());
