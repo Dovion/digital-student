@@ -29,6 +29,7 @@ public class GradeServiceImpl implements GradeService {
                                               .orElseThrow(() -> new EntityNotFoundException(
                                                       "Передан неверный идентификатор студента"));
         var grade = GradeMapper.fromDto(gradeDto);
+        grade.setStudent(foundedStudent);
         return GradeMapper.gradeToOutDto(gradeRepository.saveAndFlush(grade));
     }
 

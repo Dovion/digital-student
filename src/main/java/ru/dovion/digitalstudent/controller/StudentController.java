@@ -2,6 +2,7 @@ package ru.dovion.digitalstudent.controller;
 
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
+import net.sf.jasperreports.engine.JRException;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,6 +18,7 @@ import ru.dovion.digitalstudent.model.dto.StudentDto;
 import ru.dovion.digitalstudent.model.dto.StudentOutDto;
 import ru.dovion.digitalstudent.service.StudentService;
 
+import java.io.FileNotFoundException;
 import java.util.List;
 
 @RestController
@@ -62,5 +64,17 @@ public class StudentController {
     @Operation(summary = "Получить информацию обо всех студентах")
     public List<StudentOutDto> getAll() {
         return studentService.getAll();
+    }
+
+    @GetMapping("/report/all")
+    @Operation(summary = "Сгенерировать список всех студентов в формате pdf")
+    public void makeReport() throws JRException, FileNotFoundException {
+        studentService.makeReportForAllStudents();
+    }
+
+    @GetMapping("/report/student")
+    @Operation(summary = "Сгенерировать отчёт об успеваемости студента по идентификатору в формате pdf")
+    public void makeReportForStudent(@RequestParam Long studentId) throws JRException, FileNotFoundException {
+        studentService.makeReportForStudent(studentId);
     }
 }

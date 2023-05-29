@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface GradeService {
 
-    public GradeOutDto createGrade(GradeDto gradeDto);
+    GradeOutDto createGrade(GradeDto gradeDto);
 
-    public GradeOutDto updateGrade(GradeDto gradeDto, Long id);
+    GradeOutDto updateGrade(GradeDto gradeDto, Long id);
 
-    public GradeOutDto getGrade(Long id);
+    GradeOutDto getGrade(Long id);
 
-    public void deleteGrade(Long id);
+    void deleteGrade(Long id);
 
-    public List<GradeOutDto> getAll();
+    List<GradeOutDto> getAll();
 }

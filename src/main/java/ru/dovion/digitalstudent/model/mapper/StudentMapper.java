@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import ru.dovion.digitalstudent.model.Student;
 import ru.dovion.digitalstudent.model.dto.StudentDto;
 import ru.dovion.digitalstudent.model.dto.StudentOutDto;
+import ru.dovion.digitalstudent.model.dto.StudentReportDto;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,5 +26,9 @@ public class StudentMapper {
                                            .stream()
                                            .map(grade -> GradeMapper.gradeToOutDto(grade))
                                            .collect(Collectors.toList()));
+    }
+
+    public static StudentReportDto toStudentReportDto(Student student) {
+        return modelMapper.map(student, StudentReportDto.class);
     }
 }
