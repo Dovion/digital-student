@@ -23,3 +23,8 @@
 ### **Использование отчётов Jasper Reports:**
 Была добавлена функция для полного списка студентов и списка оценок каждого студента с помощью запросов /report/all и /report/student.
 Новые PDF-файлы сохраняются в корневом каталоге проекта в формате all_student_report.pdf и имя_фамилия_student_report.pdf
+
+Примеры отчётов:
+
+![](https://sun9-66.userapi.com/impg/5lbSSKj82yR6gquY4s_Ffy9XFVl_jvkWMAivAQ/Y-KfU0ZIAJc.jpg?size=796x439&quality=95&sign=5155ac325e5e15830fc1c23992bf4d94&c_uniq_tag=q2uxZFCF-iKltVPDTh1JglXsFkmBu6aR1yPlPf-PRWo&type=album)
+![](https://sun9-60.userapi.com/impg/2QgpKASOQ7kz6k_C9z8PXwUfRY8DlTXA_DEU1w/tgecFbBYNsE.jpg?size=789x467&quality=96&sign=7b46b9f1c68258c3df75d56419461580&type=album)
